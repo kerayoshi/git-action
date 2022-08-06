@@ -6,8 +6,9 @@ jobs:
     steps:
      
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: |
+          actions/checkout@v3
+          ./.github/actions/git-action
       - name: Code test
-        uses: ./.github/actions/git-action
         run: |
           python3 hello-world.py
